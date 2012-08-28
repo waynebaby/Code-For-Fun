@@ -35,7 +35,10 @@ namespace WpfApplication1
                     targetList.AddLast(new WeakReference<FrameworkElement>(o as FrameworkElement));
                 }
             });
-            fi.SetValue(nmeta, newcb);
+
+            var oldcb = (PropertyChangedCallback)fi.GetValue(nmeta);
+            oldcb += newcb;
+            fi.SetValue(nmeta, oldcb);
 
         }
 
