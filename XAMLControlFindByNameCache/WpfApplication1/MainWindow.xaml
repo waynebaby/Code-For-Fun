@@ -3,6 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525" Name="my1">
     <Grid>
-        
+        <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75"/>
+        <Canvas HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100">
+            <ContentControl Content="ContentControl"/>
+        </Canvas>
+
     </Grid>
 </Window>

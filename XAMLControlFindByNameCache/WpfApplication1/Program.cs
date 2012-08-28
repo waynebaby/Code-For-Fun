@@ -9,11 +9,11 @@ using System.Windows;
 namespace WpfApplication1
 {
 
-    public  class AllControlNameCache
+    public class AllControlNameCache
     {
         static AllControlNameCache()
-        { 
-            
+        {
+
         }
 
         static Dictionary<string, LinkedList<WeakReference<FrameworkElement>>> controlsCache
@@ -24,11 +24,16 @@ namespace WpfApplication1
             var fi = typeof(PropertyMetadata).GetField("_propertyChangedCallback", BindingFlags.NonPublic | BindingFlags.Instance);
             var newcb = new PropertyChangedCallback((o, e) =>
             {
-                //MessageBox.Show(string.Format("object:{0},\r\nname:{1}", o.ToString(), e.NewValue.ToString()));
-                LinkedList<WeakReference<FrameworkElement>> targetList;
-                var key=e.NewValue.ToString();
-                targetList = GetListByKey(key);
-                targetList.AddLast(new WeakReference <FrameworkElement >(o as FrameworkElement));
+                if (!string.IsNullOrEmpty((string)e.NewValue))
+                {
+
+
+                    //MessageBox.Show(string.Format("object:{0},\r\nname:{1}", o.ToString(), e.NewValue.ToString()));
+                    LinkedList<WeakReference<FrameworkElement>> targetList;
+                    var key = e.NewValue.ToString();
+                    targetList = GetListByKey(key);
+                    targetList.AddLast(new WeakReference<FrameworkElement>(o as FrameworkElement));
+                }
             });
             fi.SetValue(nmeta, newcb);
 
@@ -49,22 +54,22 @@ namespace WpfApplication1
         {
             var lst = GetListByKey(name);
             var node = lst.First;
-            while (node!=null)
+            while (node != null)
             {
                 var next = node.Next;
                 FrameworkElement target;
-                
+
                 if (node.Value.TryGetTarget(out target))
                 {
                     yield return target;
                 }
                 else
                 {
-                    lst.Remove(node);                
+                    lst.Remove(node);
                 }
                 node = next;
             }
-        
+
         }
     }
 
@@ -73,7 +78,7 @@ namespace WpfApplication1
         [System.STAThreadAttribute()]
 
         public static void Main()
-        {        
+        {
             AllControlNameCache.InitCache();
             WpfApplication1.App app = new WpfApplication1.App();
             app.InitializeComponent();
