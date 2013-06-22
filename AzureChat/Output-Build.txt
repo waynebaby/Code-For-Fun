@@ -1,0 +1,4 @@
+﻿1>------ Build started: Project: AzureChat.Abstractions, Configuration: Debug Any CPU ------
+2>------ Build started: Project: AzureChat.Cloud, Configuration: Debug Any CPU ------
+1>  AzureChat.Abstractions -> C:\Users\waywa\Documents\Visual Studio 2012\Projects\AzureChat\AzureChat.Abstractions\bin\Debug\AzureChat.Abstractions.dll
+========== Build: 2 succeeded, 0 failed, 5 up-to-date, 0 skipped ==========
