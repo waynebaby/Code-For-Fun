@@ -7,16 +7,9 @@ namespace AzureChat.Abstractions
 {
     public interface IUserStatus
     {
-        Guid UserId
-        {
-            get;
-            set;
-        }
 
-        IUserHub UserHub
-        {
-            get;
-            set;
-        }
+        ILink<Guid, IUser<IUserData, IUserStatus, IInbox, IOutbox>> UserLink { get; }
+
+        ILink<Guid, IUserHubService > UserHubLink { get; }
     }
 }

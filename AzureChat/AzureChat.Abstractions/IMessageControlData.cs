@@ -9,8 +9,8 @@ namespace AzureChat.Abstractions
     {
 
         bool IsPrivate { get; }
-        Guid? FromUser { get; }
-        Guid? ToUser { get; }
+        ILink<Guid, IUser<IUserData, IUserStatus, IInbox, IOutbox>> FromUserLink { get; }
+        ILink<Guid, IUser<IUserData, IUserStatus, IInbox, IOutbox>> ToUserLink { get; }
         DateTime SendTime { get; }
     }
 }

@@ -5,9 +5,9 @@ using System.Text;
 
 namespace AzureChat.Abstractions
 {
-    public interface IChannelData 
+    public interface IChannelData
     {
-        Guid ChannelId
+        ILink<Guid, IChannel<IChannelData, IChannelStatus>> ChannelLink
         {
             get;
             set;
@@ -19,7 +19,7 @@ namespace AzureChat.Abstractions
             set;
         }
 
-        
+
 
     }
 }

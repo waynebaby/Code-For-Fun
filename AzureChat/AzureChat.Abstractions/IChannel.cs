@@ -5,20 +5,21 @@ using System.Text;
 
 namespace AzureChat.Abstractions
 {
-    public interface IChannel<out TChannelData, out TChannelStatus> : IObservable<IMessage<object,IMessageControlData >>
+    public interface IChannel<out TChannelData, out TChannelStatus> :
+        IObservable<IMessage<object, IMessageControlData>>
         where TChannelStatus : IChannelStatus
         where TChannelData : IChannelData
     {
         TChannelData Data
         {
             get;
-            
+
         }
 
         TChannelStatus Status
         {
             get;
-            
+
         }
 
         Guid Id
@@ -27,6 +28,11 @@ namespace AzureChat.Abstractions
             set;
         }
 
-     
+        ILink<Guid, IChannelHubService> ChannelHubServiceLink
+        {
+            get;
+        }
+        bool IsRemote { get; }
+
     }
 }

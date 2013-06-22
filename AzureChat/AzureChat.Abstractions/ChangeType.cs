@@ -5,9 +5,11 @@ using System.Text;
 
 namespace AzureChat.Abstractions
 {
-    public interface IUserData
+    public enum ChangeNotifyType
     {
-        ILink<Guid, IUser<IUserData, IUserStatus, IInbox, IOutbox>> UserLink { get; }
+        Online,
+        Refresh,
+        Offline
 
     }
 }

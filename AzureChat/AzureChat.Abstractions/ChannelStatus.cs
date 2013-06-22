@@ -7,7 +7,7 @@ namespace AzureChat.Abstractions
 {
     public interface IChannelStatus
     {
-        Guid ChannelId
+        ILink<Guid, IChannel<IChannelData, IChannelStatus>> ChannelLink
         {
             get;
             set;

@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AzureChat.Abstractions
 {
-    public interface IUserData
+    public static class AbstractionsHelper
     {
-        ILink<Guid, IUser<IUserData, IUserStatus, IInbox, IOutbox>> UserLink { get; }
 
     }
 }

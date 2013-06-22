@@ -40,6 +40,6 @@ namespace AzureChat.Abstractions
 
         }
 
-
+        bool IsRemote { get; }
     }
 }

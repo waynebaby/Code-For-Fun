@@ -1,16 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Struct Name="AzureChat.Abstractions.ServiceRegisterNotifyMessage&lt;TService&gt;">
+    <Position X="10" Y="3.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ServiceRegisterNotifyMessage.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
   <Interface Name="AzureChat.Abstractions.IUser&lt;TUserData, TUserStatus, TInbox, TOutbox&gt;">
-    <Position X="0.5" Y="0.75" Width="1.5" />
+    <Position X="0.5" Y="0.75" Width="2" />
     <TypeIdentifier>
       <HashCode>AAACAAAEAAAAAAAAAAAAAAAAAAAIABAABAAAAAAAAAA=</HashCode>
       <FileName>IUser.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="AzureChat.Abstractions.IUserData">
-    <Position X="3" Y="0.75" Width="1.5" />
+    <Position X="3" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
       <FileName>IUserData.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -28,18 +35,19 @@
       <FileName>IOutbox.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="AzureChat.Abstractions.IPostOffice">
-    <Position X="8" Y="2.5" Width="2.5" />
+  <Interface Name="AzureChat.Abstractions.IPostOfficeService">
+    <Position X="7.25" Y="0.5" Width="4.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAQCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>IPostOffice.cs</FileName>
+      <HashCode>AQASAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAIAAAIAA=</HashCode>
+      <FileName>IPostOfficeService.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="UserHub" />
+      <Property Name="LocalChannelHubService" />
+      <Property Name="LocalUserHubService" />
     </ShowAsAssociation>
   </Interface>
   <Interface Name="AzureChat.Abstractions.IMessage&lt;TMessageBody, TMessageControlData&gt;">
-    <Position X="10.75" Y="5.75" Width="3" />
+    <Position X="9" Y="6.25" Width="3" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAABCAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IMessage.cs</FileName>
@@ -48,58 +56,72 @@
   <Interface Name="AzureChat.Abstractions.IUserStatus">
     <Position X="3" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAQAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
       <FileName>IUserStatus.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="AzureChat.Abstractions.IChannel&lt;TChannelData, TChannelStatus&gt;">
-    <Position X="12.25" Y="2.25" Width="1.5" />
+    <Position X="13.5" Y="3" Width="3" />
     <TypeIdentifier>
-      <HashCode>AAACAAAEAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAAAEAAAAAAAAAAAAAAAAAAAAABAAAAAAAAACAAA=</HashCode>
       <FileName>IChannel.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="AzureChat.Abstractions.IChannelData">
-    <Position X="14.75" Y="1.5" Width="1.5" />
+    <Position X="16" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IChannelData.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="AzureChat.Abstractions.IChannelStatus">
-    <Position X="15.75" Y="4.25" Width="1.5" />
+    <Position X="17.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ChannelStatus.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="AzureChat.Abstractions.IUserHub">
-    <Position X="5.75" Y="0.75" Width="1.5" />
+  <Interface Name="AzureChat.Abstractions.IUserHubService">
+    <Position X="4.75" Y="3.25" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>CAAAAAAAAAAAAIBAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>IUserHub.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAEAAAAAAAAAAAAgAAAAAACA=</HashCode>
+      <FileName>IUserHubService.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="AzureChat.Abstractions.ILoginToken&lt;TTokenData&gt;">
-    <Position X="7.25" Y="4.5" Width="1.5" />
+    <Position X="5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
       <FileName>ILoginToken.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="AzureChat.Abstractions.IMessageControlData">
-    <Position X="14.25" Y="5.75" Width="1.5" />
+    <Position X="16.5" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAQAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAA=</HashCode>
       <FileName>IMessageControlData.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="AzureChat.Abstractions.IChannelHub">
-    <Position X="12" Y="0.5" Width="2.75" />
+  <Interface Name="AzureChat.Abstractions.IChannelHubService">
+    <Position X="12.25" Y="0.5" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>IChannelHub.cs</FileName>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>IChannelHubService.cs</FileName>
     </TypeIdentifier>
   </Interface>
+  <Interface Name="AzureChat.Abstractions.ILink&lt;TId, TTarget&gt;">
+    <Position X="4.25" Y="6" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAEAAAAAABoAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ILink.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="AzureChat.Abstractions.ChangeNotifyType">
+    <Position X="10" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAgAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ChangeType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
   <Font Name="Microsoft YaHei UI" Size="9" />
 </ClassDiagram>

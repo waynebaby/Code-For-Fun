@@ -7,13 +7,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CrossCutting", "CrossCuttin
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Models", "Models", "{9AAD0B2E-BD3F-432F-B94A-47FEC1AE13A3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hosts", "Hosts", "{EC7BC247-D3ED-40D0-B6A0-34B47FFA2859}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{972FC9BE-97A9-4E96-9E98-E4C648F4FDDF}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureChat.Abstractions", "AzureChat.Abstractions\AzureChat.Abstractions.csproj", "{2C27B87D-AD72-4B7A-997D-6EAF24BEA7CB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureChat.InternalServices", "AzureChat.InternalServices\AzureChat.InternalServices.csproj", "{916067C9-F408-4D3E-88C2-DF5C707E3EF2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureChat.PublicServices", "AzureChat.PublicServices\AzureChat.PublicServices.csproj", "{05D15A77-2DA8-4200-83C6-7D44A8F773AB}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hosts", "Hosts", "{EC7BC247-D3ED-40D0-B6A0-34B47FFA2859}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureChat,.Models", "AzureChat,.Models\AzureChat,.Models.csproj", "{E0C4D231-0B88-4358-A645-6DEB886E1D49}"
 EndProject
@@ -22,8 +24,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureChat.Hosts.WebHost", "AzureChat.Hosts.WebHost\AzureChat.Hosts.WebHost.csproj", "{0E48340B-0C59-4316-9FAC-EE007F6834DB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureChat.Hosts.ChatroomHost", "AzureChat.Hosts.ChatroomHost\AzureChat.Hosts.ChatroomHost.csproj", "{1FF66889-442C-4FA1-A35B-8A74125595BC}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{972FC9BE-97A9-4E96-9E98-E4C648F4FDDF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
