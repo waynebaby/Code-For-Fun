@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AzureChat.Abstractions
+namespace AzureChat.Common
 {
     public struct OneOrMore<T> : IEnumerable<T>
     {
@@ -52,7 +52,7 @@ namespace AzureChat.Abstractions
             {
                 case OneOrMoreType.One:
 
-                    return new SingleEnumerator<T>(One);
+                    return Single (One);
 
                 case OneOrMoreType.More:
                     return More.GetEnumerator();
@@ -63,50 +63,17 @@ namespace AzureChat.Abstractions
             }
         }
 
+        IEnumerator<T> Single(T value)
+        {
+            yield return value;
+        }
+
         System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
         }
     }
-    struct SingleEnumerator<T> : IEnumerator<T>
-    {
-        bool _Done;
-        T _Current;
-        public SingleEnumerator(T value)
-        {
-            _Current = value;
-            _Done = false;
 
-        }
-
-
-        public T Current
-        {
-            get { return _Current; }
-        }
-
-        public void Dispose()
-        {
-            _Current = default(T);
-        }
-
-        object System.Collections.IEnumerator.Current
-        {
-            get { return Current; }
-        }
-
-        public bool MoveNext()
-        {
-            var rval = !_Done;
-            _Done = true;
-            return rval;
-        }
-
-        public void Reset()
-        {
-            _Done = false;
-        }
-    }
 
 
 

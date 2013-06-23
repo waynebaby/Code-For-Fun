@@ -1,19 +1,31 @@
-﻿using AzureChat.Abstractions;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace AzureChat.Common
 {
+    public interface ILink<TId, TTarget>
+    {
+        [DataMember]
+        TId LinkId { get; set; }
+        Task<TTarget> GetItemAsync();
+        TTarget GetItem();
 
+        bool IsInstanceLoaded { get; }
+        void ClearLoaded();
+        Task ClearLoadedAsync();
+    }
     /// <summary>
     /// 一个根据ID取相关资源的类似LazyLoad的模式:Link
     /// </summary>
     /// <typeparam name="TId">Id类型</typeparam>
     /// <typeparam name="TTarget">内容</typeparam>
+    [DataContract]
     public abstract class LinkBase<TId, TTarget> : ILink<TId, TTarget>
     {
         /// <summary>
@@ -29,6 +41,7 @@ namespace AzureChat.Common
         /// <summary>
         /// 由于是否装载，Id与取到的值 往往是对应的，所以用一个struct进行状态维护
         /// </summary>
+
         protected class LoadedValue
         {
             /// <summary>
@@ -66,6 +79,7 @@ namespace AzureChat.Common
         /// <summary>
         /// 资源的Id
         /// </summary>
+        [DataMember]
         public virtual TId LinkId
         {
             get
@@ -237,15 +251,15 @@ namespace AzureChat.Common
         public override async Task ClearLoadedAsync()
         {
             var nt = Task.Factory.StartNew<Task>
-           (
+            (
                 base.ClearLoadedAsync,
                 CancellationToken.None,
                 TaskCreationOptions.None,
                 rws.ExclusiveScheduler
-           );
+            );
             await await nt;
         }
-
+        [DataMember]
         public override TId LinkId
         {
             get
