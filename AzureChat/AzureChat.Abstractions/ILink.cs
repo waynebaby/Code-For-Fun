@@ -19,5 +19,6 @@ namespace AzureChat.Abstractions
         
         bool IsInstanceLoaded { get; }
         void ClearLoaded();
+        Task  ClearLoadedAsync();
     }
 }
