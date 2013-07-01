@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("AzureChat,.Models")]
+[assembly: AssemblyTitle("AzureChat.Models.Test")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("AzureChat,.Models")]
+[assembly: AssemblyProduct("AzureChat.Models.Test")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("9126d7e0-8daf-425d-a96a-c7f74b1cefbb")]
+[assembly: Guid("4f9824a0-254e-41ba-8411-ca67b5c3986c")]
 
 // Version information for an assembly consists of the following four values:
 //

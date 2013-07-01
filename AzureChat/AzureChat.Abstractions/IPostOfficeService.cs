@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 namespace AzureChat.Abstractions
 {
  
-    public interface IPostOfficeService :
+    public interface IPostOfficeService  :
+        IDisposable ,
         IObserver<ServiceRegisterNotifyMessage<IUser<IUserData, IUserStatus, IInbox, IOutbox>>>,
         IObserver<ServiceRegisterNotifyMessage<IChannel<IChannelData, IChannelStatus>>>,
         IObserver<ServiceRegisterNotifyMessage<IPostOfficeService>>,
@@ -23,9 +24,7 @@ namespace AzureChat.Abstractions
         //Task<IPostOfficeService> LocatePostOfficeServiceAsync(Guid id);
  
         Task<IUser<IUserData, IUserStatus, IInbox, IOutbox>> LocateUserAsync(Guid id);
-
         Task<IChannel<IChannelData, IChannelStatus>> LocateChannelAsync(Guid id);
-
         IUserHubService LocalUserHubService { get; }
         IChannelHubService LocalChannelHubService { get; }
         bool IsRemote { get; }
