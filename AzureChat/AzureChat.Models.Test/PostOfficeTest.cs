@@ -1,6 +1,8 @@
 ﻿using System;
-using System.Reactive
+using System.Reactive;
+
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Threading.Tasks;
 
 namespace AzureChat.Models.Test
 {
@@ -8,10 +10,15 @@ namespace AzureChat.Models.Test
     public class PostOfficeTest
     {
         [TestMethod]
-        public void PostOfficeOnlineSubscription()
+        public async void PostOfficeOnlineSubscription()
         {
             PostOffice p = new PostOffice(Guid.NewGuid());
-            var p.Sub
+           
+            var task=new Task(()=>{});
+
+            
+
+
 
 
         }
